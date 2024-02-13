@@ -13,25 +13,33 @@
     
 
 </head>
-<body class= " .font-poppins ">
+<body class= ".font-poppins ">
     <main class="bg-[#010313] min-h-screen  bg-[url(./images/background.png)] bg-no-repeat bg-center ">
         <!-- Home Screen -->
-        <section class="home min-h-screen text-white flex flex-col justify-center items-center space-y-14 hidden">
+        <section class="home hidden min-h-screen text-white flex flex-col justify-center items-center space-y-14 ">
             <h1 class="text-8xl font-anton">ALPHABET CLASH PRO</h1>
             <p>Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-            <button class="bg-white text-black w-28 h-[50px] rounded-lg space-y-3">Play Now</button>
+                         <!-- <button class="bg-white text-black w-28 h-[50px] rounded-lg space-y-3">Play Now</button> -->
+            <button class="btn bg-white text-black w-28 h-[50px] rounded-lg space-y-3">
+                Play Now
+            </button>
         </section>
         
 
         <!-- PlayGround -->
-        <section class="play-ground">
-            <div>
+        <section class="play-ground hidden">
+            <div class="flex flex-col items-center gap-20 pt-20 ">
                 <!-- screen -->
                 <div class="artboard artboard-horizontal phone-6 border-[20px] border-[#010313cc] bg-[#FFFFFFB3] rounded-2xl">
+                    <div class="flex justify-center">
+                        <p class="bg-[#2F2941] px-6 pb-4 rounded-b-xl text-white">Don't watch keyboard while playing...</p>
+                    </div>
+                    <div class="flex justify-center items-center h-full">
+                        <p class="text-red-700 text-8xl">Y</p>
 
-                    1024×320
-                
+                    </div>
                 </div>
+
                 <!-- keyboard starts-->
                 <div>
                     <div class="flex justify-center gap-1 my-1 w-full">
@@ -70,15 +78,27 @@
                 </div>
                 <!-- Keyboard ends -->
 
-
                 <!-- score -->
+                <div class=" flex justify-between w-5/6">
+                    <button class="btn bg-[#894189] rounded-3xl">
+                        Life<img src="images/heartBlink.svg" alt="">1
+                    </button>
+
+                    <button class="btn bg-[#360490] rounded-3xl  ">
+                        Score<img src="images/monetization.svg" alt="">1
+                    </button>
+                </div>
             </div>
         
         </section>
         
         
-        <section class="score">
-
+        <section class="score flex flex-col justify-center items-center min-h-screen  hidden">
+            <div class=" text-center px-16 py-14 rounded-xl space-y-6 bg-[#FFFFFF33]">
+                <h1 class="text-7xl font-bold text-white">Score : 14</h1>
+                <button class="bg-white text-black w-36 h-[50px] rounded-lg space-y-3 text-xl font-bold .font-poppins">Play Now</button>
+                <p>Practice will make you Pro</p>
+            </div>
         </section>
 
     </main>
