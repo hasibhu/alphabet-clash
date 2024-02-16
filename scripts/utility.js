@@ -23,6 +23,25 @@ function removeBackgroundColorById(elementId){
     element.classList.remove('bg-orange-400');
 }
 
+
+// Element value finding function
+
+function getTextElementValueById(elementId) {
+    const element = document.getElementById(elementId);
+    const elementValueText = element.innerText;
+    const value = parseInt(elementValueText);
+    return value;
+
+}
+
+// elemen value setting function
+
+function setTextElementValueById(elementId, value ) {
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+}
+
+// alphabet finding function
 function getARandomAlphabet(){
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
     const alphabets = alphabetString.split('');

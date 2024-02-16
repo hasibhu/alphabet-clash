@@ -25,35 +25,51 @@ function handleKeyboardKeyUpEvent(event) {
         console.log(`You get a point`);
         // update score
         // 1. current score
-        const currentScoreElement = document.getElementById('currentScore');
-        const currentScoreText = currentScoreElement.innerText;
-        const currentScore = parseInt(currentScoreText);
+        // const currentScoreElement = document.getElementById('currentScore');
+        // const currentScoreText = currentScoreElement.innerText;
+        // const currentScore = parseInt(currentScoreText);
+        
+        // or we can use common function to get the current score
 
-        // 2. increase by 1
+        const currentScore = getTextElementValueById('current-Score');
+
+        // 2. increase by 1a
         const newScore = currentScore + 1;
         // console.log(newScore);
         // 3. show updated score
-        currentScoreElement.innerText = newScore;
+        // currentScore.innerText = newScore; this line will not function that is why we will use a function to set the innerText.
+        setTextElementValueById('current-Score', newScore)
         
         // start a new round
         removeBackgroundColorById(expectedAlphabet);
-        continueGame()
+
+        continueGame();
     }
     else {
-        console.log(`You loose a life`);
-
+        // console.log(`You loose a life`);
         // life update
-        // 1 get current life
-        const currentLifeElement = document.getElementById('lifeScore');
-        const currentLifeText = currentLifeElement.innerText;
-        const currentLife = parseInt(currentLifeText);
-        // 2 reduce life
-        const newLife = currentLife - 1;
-        // 3 update life
-        currentLifeElement.innerText = newLife;
+        // step 1 get current life
+        // const currentLifeElement = document.getElementById('lifeScore');
+        // const currentLifeText = currentLifeElement.innerText;
+        // const currentLife = parseInt(currentLifeText);
+        const currentLife = getTextElementValueById('lifeScore');
 
-        if (newLife == 0) {
-            
+        //step 2 reduce life
+        const newLife = currentLife - 1;
+        // step 3 update life
+        // currentLifeElement.innerText = newLife;
+        setTextElementValueById('lifeScore', newLife)
+
+
+        if (newLife === 0) {
+
+            gameOver();
+
+            // const gameScoreSet = getTextElementValueById('finalGameScore');
+
+            // // const finalScore = getTextElementValueById('current-Score');
+
+            // gameScoreSet.innerText = newScore;
         }
     }
 
@@ -75,8 +91,27 @@ function continueGame(){
     setBackgroundColorById(alphabet);
 }
 
-function play(){
+function play() {
+    // hide everything except playground
     hideElementById('home-screen');
+    hideElementById('score'); // will hide the final score screen 
     showElementById('play-ground');
+
+    // reset  score and life
+    setTextElementValueById('lifeScore', 3);
+    setTextElementValueById('current-Score', 0);
+
+    // remove background 
+
+
     continueGame();
+}
+
+function gameOver() {
+    hideElementById('play-ground');
+    showElementById('score');
+
+    // update final score
+    const lastScore = getTextElementValueById('current-Score');
+    setTextElementValueById('finalGameScore', lastScore);
 }
