@@ -51,7 +51,6 @@ function getElementTextById(elementId) {
 }
 
 
-
 // alphabet finding function
 function getARandomAlphabet(){
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
