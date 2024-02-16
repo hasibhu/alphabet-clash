@@ -41,6 +41,17 @@ function setTextElementValueById(elementId, value ) {
     element.innerText = value;
 }
 
+
+// get element by ID
+
+function getElementTextById(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.innerText;
+    return text;
+}
+
+
+
 // alphabet finding function
 function getARandomAlphabet(){
     const alphabetString = 'abcdefghijklmnopqrstuvwxyz';
