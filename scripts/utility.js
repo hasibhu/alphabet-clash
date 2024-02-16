@@ -1,12 +1,17 @@
+
+// Hide landing page
 function hideElementById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.add('hidden');
 }
 
+// display typing page
 function showElementById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.remove('hidden');
 }
+
+
 
 function setBackgroundColorById(elementId){
     const element = document.getElementById(elementId);
@@ -28,6 +33,10 @@ function getARandomAlphabet(){
     const alphabet = alphabets[index];
     return alphabet;
 }
+
+
+
+
 
 // function getARandomAlphabet() {
 //     // get or create an alphabet array
